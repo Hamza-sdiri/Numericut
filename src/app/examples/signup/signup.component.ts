@@ -1,5 +1,6 @@
 import { Component, OnInit } from "@angular/core";
-import { FormBuilder, FormGroup, Validators } from "@angular/forms";
+import { FormBuilder, FormControl, FormGroup, Validators } from "@angular/forms";
+import { AuthService } from "app/services/auth.service";
 
 @Component({
     selector: "app-signup",
@@ -10,22 +11,31 @@ export class SignupComponent implements OnInit {
     test: Date = new Date();
     focus;
     focus1;
-    constructor() { }
+    registerForm: FormGroup;
+constructor(private authService:AuthService){
 
+}
     ngOnInit() {
-        // this.signupForm = this.formBuilder.group({
-        //     firstName: ["", Validators.required],
-        //     lastName: ["", Validators.required],
-        //     email: ["", [Validators.required, Validators.email]],
-        //     password: ["", [Validators.required, Validators.minLength(6)]],
-        // });
+      this.registerForm = new FormGroup({
+        username: new FormControl('', Validators.required),
+        email: new FormControl('', [Validators.required, Validators.email]),
+        phone: new FormControl(''),
+        password: new FormControl('', Validators.required)
+      });
+    }
+  
+    onSubmit() {
+      if (this.registerForm.valid) {
+        this.authService.register(this.registerForm.value).subscribe(
+          (res) => {
+            console.log(res);
+          },
+          (err) => {
+            console.log(err);
+          }
+        );
+      }
     }
 
-    // onSubmit() {
-    //     if (this.signupForm.invalid) {
-    //         return;
-    //     }
-
-    //     // Perform signup logic here
-    // }
+        
 }
