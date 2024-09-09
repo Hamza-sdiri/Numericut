@@ -11,19 +11,37 @@ import { NucleoiconsComponent } from './components/nucleoicons/nucleoicons.compo
 import { LoginComponent } from './examples/login/login.component';
 import { ExamplesModule } from './examples/examples.module';
 import { ReactiveFormsModule } from '@angular/forms';
+import { PasserCommandeComponent } from './examples/passer-commande/passer-commande.component';
+import { AdminModule } from './admin/admin.module';
+import { GestionCommandeComponent } from './admin/gestion-commande/gestion-commande.component';
+import { GestionMachineComponent } from './admin/gestion-machine/gestion-machine.component';
 
 const routes: Routes = [
-  { path: "", redirectTo: "home", pathMatch: "full" },
+  { path: "", redirectTo: "landing", pathMatch: "full" },
   { path: "home", component: ComponentsComponent },
   { path: "user-profile", component: ProfileComponent },
   { path: "signup", component: SignupComponent },
   { path: "login", component: LoginComponent },
   { path: "landing", component: LandingComponent },
+  { path: "commande", component: PasserCommandeComponent },
   { path: "nucleoicons", component: NucleoiconsComponent },
+  
+
+
+  //admin routes
+  {
+    path: "gestion-commande",
+    component: GestionCommandeComponent,
+  },
+  {
+    path: "gestion-machine",
+    component: GestionMachineComponent,
+  },
 ];
 
 @NgModule({
   imports: [
+    AdminModule,
     ReactiveFormsModule,
     ExamplesModule,
     CommonModule,
