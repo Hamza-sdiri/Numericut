@@ -1,5 +1,6 @@
 import { Component, OnInit } from "@angular/core";
 import { FormBuilder, FormControl, FormGroup, Validators } from "@angular/forms";
+import { Router } from "@angular/router";
 import { AuthService } from "app/services/auth.service";
 
 @Component({
@@ -12,8 +13,11 @@ export class SignupComponent implements OnInit {
     focus;
     focus1;
     registerForm: FormGroup;
-constructor(private authService:AuthService){
-
+constructor(
+  private authService:AuthService,
+  private router:Router)
+  {
+  
 }
     ngOnInit() {
       this.registerForm = new FormGroup({
@@ -29,6 +33,7 @@ constructor(private authService:AuthService){
         this.authService.register(this.registerForm.value).subscribe(
           (res) => {
             console.log(res);
+            this.router.navigate(['home']);
           },
           (err) => {
             console.log(err);
