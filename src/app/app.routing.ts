@@ -25,7 +25,6 @@ const routes: Routes = [
   { path: "landing", component: LandingComponent },
   { path: "commande", component: PasserCommandeComponent },
   { path: "nucleoicons", component: NucleoiconsComponent },
-  { path: "gestioncommande", component: GestionComandeComponent },
   
 
 

@@ -33,7 +33,7 @@ export class LoginComponent implements OnInit {
         (res) => {
             console.log(res);
             if(res.role === "user"){
-              this.router.navigate(['home']);
+              this.router.navigate(['commande']);
             }
             else{
               this.router.navigate(["gestion-commande"]);
