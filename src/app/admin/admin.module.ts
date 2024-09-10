@@ -1,11 +1,11 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { GestionCommandeComponent } from './gestion-commande/gestion-commande.component';
+import { GestionComandeComponent } from './gestion-comande/gestion-comande.component';
 import { GestionMachineComponent } from './gestion-machine/gestion-machine.component';
 import { RouterModule, Routes } from '@angular/router';
 
 const routes: Routes = [
-  { path: 'gestion-commande', component: GestionCommandeComponent },
+  { path: 'gestion-comande', component: GestionComandeComponent },
   { path: 'gestion-machine', component: GestionMachineComponent }
 ];
 
@@ -18,7 +18,6 @@ export class AdminRoutingModule { }
 
 @NgModule({
   declarations: [
-    GestionCommandeComponent,
     GestionMachineComponent
   ],
   imports: [

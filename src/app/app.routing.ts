@@ -13,7 +13,7 @@ import { ExamplesModule } from './examples/examples.module';
 import { ReactiveFormsModule } from '@angular/forms';
 import { PasserCommandeComponent } from './examples/passer-commande/passer-commande.component';
 import { AdminModule } from './admin/admin.module';
-import { GestionCommandeComponent } from './admin/gestion-commande/gestion-commande.component';
+import { GestionComandeComponent } from './admin/gestion-comande/gestion-comande.component';
 import { GestionMachineComponent } from './admin/gestion-machine/gestion-machine.component';
 
 const routes: Routes = [
@@ -25,13 +25,14 @@ const routes: Routes = [
   { path: "landing", component: LandingComponent },
   { path: "commande", component: PasserCommandeComponent },
   { path: "nucleoicons", component: NucleoiconsComponent },
+  { path: "gestioncommande", component: GestionComandeComponent },
   
 
 
   //admin routes
   {
     path: "gestion-commande",
-    component: GestionCommandeComponent,
+    component: GestionComandeComponent,
   },
   {
     path: "gestion-machine",
