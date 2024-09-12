@@ -25,13 +25,13 @@ const routes: Routes = [
   { path: "landing", component: LandingComponent },
   { path: "commande", component: PasserCommandeComponent },
   { path: "nucleoicons", component: NucleoiconsComponent },
-  { path: "gestioncommande", component: GestionComandeComponent },
+  { path: "gestioncomande", component: GestionComandeComponent },
   
 
 
   //admin routes
   {
-    path: "gestion-commande",
+    path: "gestion-comande",
     component: GestionComandeComponent,
   },
   {
