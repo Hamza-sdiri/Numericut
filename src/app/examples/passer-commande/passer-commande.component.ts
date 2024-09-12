@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ComandeService } from 'app/services/comande.service';
 
 @Component({
   selector: 'app-passer-commande',
@@ -7,9 +8,42 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PasserCommandeComponent implements OnInit {
 
-  constructor() { }
+  newComande = {
+    customer: '',
+    totalPrice: 0,
+    shippingAddress: '',
+    paymentMethod: '',
+    orderStatus: 'processing', // Default value
+    orderedAt: new Date(),
+    deliveredAt: null
+  };
 
-  ngOnInit(): void {
+  constructor(private comandeService: ComandeService) { }
+
+  ngOnInit(): void { }
+
+  onSubmit(): void {
+    this.comandeService.createComande(this.newComande).subscribe(
+      response => {
+        console.log('Order created successfully', response);
+        // Optionally reset the form or provide feedback to the user
+        this.resetForm();
+      },
+      error => {
+        console.error('Error creating order', error);
+      }
+    );
   }
 
+  resetForm(): void {
+    this.newComande = {
+      customer: '',
+      totalPrice: 0,
+      shippingAddress: '',
+      paymentMethod: '',
+      orderStatus: 'processing',
+      orderedAt: new Date(),
+      deliveredAt: null
+    };
+  }
 }

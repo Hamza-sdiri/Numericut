@@ -16,6 +16,7 @@ import { AdminModule } from './admin/admin.module';
 import { GestionComandeComponent } from './admin/gestion-comande/gestion-comande.component';
 import { GestionMachineComponent } from './admin/gestion-machine/gestion-machine.component';
 
+
 const routes: Routes = [
   { path: "", redirectTo: "landing", pathMatch: "full" },
   { path: "home", component: ComponentsComponent },
@@ -23,12 +24,11 @@ const routes: Routes = [
   { path: "signup", component: SignupComponent },
   { path: "login", component: LoginComponent },
   { path: "landing", component: LandingComponent },
-  { path: "commande", component: PasserCommandeComponent },
   { path: "nucleoicons", component: NucleoiconsComponent },
   { path: "gestioncomande", component: GestionComandeComponent },
+  { path: "passercomande", component: PasserCommandeComponent },
   
-
-
+  
   //admin routes
   {
     path: "gestion-comande",
