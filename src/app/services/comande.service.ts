@@ -21,8 +21,8 @@ export class ComandeService {
   }
 
   // Get all comandes
-  getAllComandes(): Observable<any> {
-    return this.http.get(`${this.apiUrl}`);
+   getAllComandes(): Observable<any[]> {
+    return this.http.get<any[]>(this.apiUrl);
   }
 
   // Update a comande by its ID

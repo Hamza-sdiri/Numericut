@@ -18,11 +18,11 @@
       <tbody>
         <tr *ngFor="let comande of comandes">
           <td>{{ comande._id }}</td>
-          <td>{{ comande.customer }}</td>
+          <td>{{ comande.customer}}</td>
           <td>{{ comande.totalPrice }}</td>
           <td>{{ comande.shippingAddress }}</td>
           <td>{{ comande.paymentMethod }}</td>
-          <td>{{ comande.orderStatus }}</td>
+          <td>{{ comande.orderStatus }}</td> 
           <td>{{ comande.orderedAt }}</td>
           <td>{{ comande.deliveredAt ? (comande.deliveredAt | date:'short') : 'Not Delivered' }}</td>
           <td>{{ comande.createdAt }}</td>

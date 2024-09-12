@@ -18,8 +18,8 @@ export class GestionComandeComponent implements OnInit {
   loadComandes(): void {
     this.comandeService.getAllComandes().subscribe(
       (data) => {
-        console.log (data)
         this.comandes = data;
+        console.log(this.comandes)
       },
       (error) => {
         console.error('Error fetching commandes', error);

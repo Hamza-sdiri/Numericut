@@ -18,6 +18,7 @@ export class AdminRoutingModule { }
 
 @NgModule({
   declarations: [
+    GestionComandeComponent,
     GestionMachineComponent
   ],
   imports: [
