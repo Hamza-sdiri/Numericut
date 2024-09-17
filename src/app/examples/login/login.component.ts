@@ -33,10 +33,10 @@ export class LoginComponent implements OnInit {
         (res) => {
             console.log(res);
             if(res.role === "user"){
-              this.router.navigate(['commande']);
+              this.router.navigate(["passercomande"]);
             }
             else{
-              this.router.navigate(["gestion-commande"]);
+              this.router.navigate(["gestion-comande"]);
 
             }
         },
