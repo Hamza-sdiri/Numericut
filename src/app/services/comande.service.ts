@@ -30,8 +30,13 @@ export class ComandeService {
     return this.http.put(`${this.apiUrl}/${id}`, data);
   }
 
-  // Delete a comande by its ID
-  deleteComande(id: string): Observable<any> {
-    return this.http.delete(`${this.apiUrl}/${id}`);
+   // Update order status
+   updateOrderStatus(orderId: string, newStatus: string): Observable<any> {
+    return this.http.put(`${this.apiUrl}/${orderId}/status`, { status: newStatus });
+  }
+
+  // Delete an order
+  deleteComande(orderId: string): Observable<any> {
+    return this.http.delete(`${this.apiUrl}/${orderId}`);
   }
 }

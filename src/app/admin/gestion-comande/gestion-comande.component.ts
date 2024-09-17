@@ -26,4 +26,15 @@ export class GestionComandeComponent implements OnInit {
       }
     );
   }
+  deleteComande(orderId: string): void {
+      this.comandeService.deleteComande(orderId).subscribe(
+        (response) => {
+          console.log('Order deleted successfully:', response);
+          this.loadComandes(); // Reload the commandes after deletion
+        },
+        (error) => {
+          console.error('Error deleting order', error);
+        }
+      );
+  }
 }
