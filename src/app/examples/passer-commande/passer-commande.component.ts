@@ -18,9 +18,17 @@ export class PasserCommandeComponent implements OnInit {
     deliveredAt: null
   };
 
+  ngOnInit(): void {
+    const username = localStorage.getItem('username')
+    console.log(username)
+    if (username) {
+      this.newComande.customer = username;
+    }
+  }
+
   constructor(private comandeService: ComandeService) { }
 
-  ngOnInit(): void { }
+
 
   onSubmit(): void {
     this.comandeService.createComande(this.newComande).subscribe(
