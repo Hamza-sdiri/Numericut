@@ -39,6 +39,8 @@ export class LoginComponent implements OnInit {
               this.router.navigate(["gestion-comande"]);
 
             }
+            localStorage.setItem("token",res.token)
+            localStorage.setItem('username',res.username)
         },
         (err) => {
           console.log(err);
