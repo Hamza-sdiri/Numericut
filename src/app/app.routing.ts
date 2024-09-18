@@ -15,6 +15,8 @@ import { PasserCommandeComponent } from './examples/passer-commande/passer-comma
 import { AdminModule } from './admin/admin.module';
 import { GestionComandeComponent } from './admin/gestion-comande/gestion-comande.component';
 import { GestionMachineComponent } from './admin/gestion-machine/gestion-machine.component';
+import { CreateMachineComponent } from './admin/creat-machine/creat-machine.component';
+import { MachineListComponent } from './admin/machine-list/machine-list.component';
 
 
 const routes: Routes = [
@@ -37,6 +39,14 @@ const routes: Routes = [
   {
     path: "gestion-machine",
     component: GestionMachineComponent,
+  },
+  {
+    path: "creat-machine",
+    component: CreateMachineComponent,
+  },
+  {
+    path: "machine-list",
+    component: MachineListComponent,
   },
 ];
 

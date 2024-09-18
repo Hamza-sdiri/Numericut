@@ -12,7 +12,6 @@ import { ExamplesModule } from './examples/examples.module';
 import { HttpClientModule } from '@angular/common/http';
 import { AdminModule } from './admin/admin.module';
 
-
 @NgModule({
   declarations: [AppComponent, NavbarComponent, FooterComponent],
   imports: [
@@ -27,6 +26,7 @@ import { AdminModule } from './admin/admin.module';
     HttpClientModule,
     AdminModule
   ],
+  providers: [],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

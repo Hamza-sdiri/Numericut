@@ -1,0 +1,30 @@
+<!-- src/app/components/machine-list/machine-list.component.html -->
+<div class="container mt-5">
+    <h2 class="text-center mb-4">List of Machines</h2>
+    <div *ngIf="machines.length > 0; else noMachines">
+      <table class="table table-bordered">
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Description</th>
+            <th>Serial Number (SN)</th>
+            <th>Model</th>
+            <th>Price</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let machine of machines">
+            <td>{{ machine.name }}</td>
+            <td>{{ machine.description }}</td>
+            <td>{{ machine.SN }}</td>
+            <td>{{ machine.model }}</td>
+            <td>{{ machine.price }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <ng-template #noMachines>
+      <p class="text-center">No machines available</p>
+    </ng-template>
+  </div>
+  
