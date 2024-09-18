@@ -10,6 +10,7 @@
             <th>Serial Number (SN)</th>
             <th>Model</th>
             <th>Price</th>
+            <th>Actions</th> <!-- Buttons will be on the far right side -->
           </tr>
         </thead>
         <tbody>
@@ -19,6 +20,13 @@
             <td>{{ machine.SN }}</td>
             <td>{{ machine.model }}</td>
             <td>{{ machine.price }}</td>
+            <td>
+              <!-- Align buttons to the right -->
+              <div class="d-flex justify-content-end">
+                <button class="btn btn-primary btn-sm mr-2" (click)="onEdit(machine)">Edit machine</button>
+                <button class="btn btn-danger btn-sm" (click)="onDelete(machine._id)">Delete</button>
+              </div>
+            </td>
           </tr>
         </tbody>
       </table>

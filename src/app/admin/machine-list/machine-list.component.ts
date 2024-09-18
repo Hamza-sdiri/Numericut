@@ -27,4 +27,15 @@ export class MachineListComponent implements OnInit {
       }
     });
   }
+  onDelete(machineId: string): void {
+    if (confirm('Are you sure you want to delete this machine?')) {
+      this.machineService.deleteMachine(machineId).subscribe({
+        next: () => {
+          this.machines = this.machines.filter(machine => machine._id !== machineId);
+          console.log('Machine deleted successfully');
+        },
+        error: (err) => console.error('Error deleting machine', err)
+      });
+    }
+  }
 }

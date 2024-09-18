@@ -17,4 +17,7 @@ export class MachineService {
   getAllMachines(): Observable<any> {
     return this.http.get(this.apiUrl)
   }
+  deleteMachine(machineId: string): Observable<any> {
+    return this.http.delete(`${this.apiUrl}/${machineId}`);
+  }
 }
