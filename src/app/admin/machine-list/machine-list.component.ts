@@ -1,6 +1,7 @@
 // src/app/components/machine-list/machine-list.component.ts
 import { Component, OnInit } from '@angular/core';
 import { MachineService } from '../../services/machine.services';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-machine-list',
@@ -10,7 +11,7 @@ import { MachineService } from '../../services/machine.services';
 export class MachineListComponent implements OnInit {
   machines: any[] = [];
 
-  constructor(private machineService: MachineService) {}
+  constructor(private machineService: MachineService, private router:Router) {}
 
   ngOnInit(): void {
     this.getMachines();
@@ -38,4 +39,8 @@ export class MachineListComponent implements OnInit {
       });
     }
   }
+  onEdit(machineId: string): void {
+    this.router.navigate(['/edit-machine', machineId]);
+  }
+
 }

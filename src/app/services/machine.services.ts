@@ -20,4 +20,10 @@ export class MachineService {
   deleteMachine(machineId: string): Observable<any> {
     return this.http.delete(`${this.apiUrl}/${machineId}`);
   }
+  updateMachine(machineId: string, machine: any): Observable<any> {
+    return this.http.put(`${this.apiUrl}/${machineId}`, machine);
+  }
+  getMachineById(machineId:string):Observable<any>{
+    return this.http.get(`${this.apiUrl}/${machineId}`);
+  }
 }

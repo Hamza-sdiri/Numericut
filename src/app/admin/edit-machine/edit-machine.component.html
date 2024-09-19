@@ -1,0 +1,43 @@
+
+<h2 class="text-center">Edit Machine</h2>
+<form [formGroup]="editMachineForm" (ngSubmit)="onSubmit()" class="form-container">
+    <div class="form-group">
+        <label for="machineName">Name:</label>
+        <input type="text" id="machineName" formControlName="name" class="form-control">
+        <div *ngIf="editMachineForm.get('name').invalid && editMachineForm.get('name').touched" class="text-danger">
+            Name is required.
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="machineDescription">Description:</label>
+        <input type="text" id="machineDescription" formControlName="description" class="form-control">
+        <div *ngIf="editMachineForm.get('description').invalid && editMachineForm.get('description').touched"
+            class="text-danger">
+            Description is required.
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="machineSerialNumber">Serial Number (SN):</label>
+        <input type="text" id="machineSerialNumber" formControlName="SN" class="form-control">
+        <div *ngIf="editMachineForm.get('SN').invalid && editMachineForm.get('SN').touched" class="text-danger">
+            Serial Number is required.
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="machineModel">Model:</label>
+        <input type="text" id="machineModel" formControlName="model" class="form-control">
+        <div *ngIf="editMachineForm.get('model').invalid && editMachineForm.get('model').touched" class="text-danger">
+            Model is required.
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="machinePrice">Price:</label>
+        <input type="text" id="machinePrice" formControlName="price" class="form-control">
+        <div *ngIf="editMachineForm.get('price').invalid && editMachineForm.get('price').touched" class="text-danger">
+            Price is required.
+        </div>
+    </div>
+    <div class="form-group text-center">
+        <button type="submit" class="btn btn-primary" [disabled]="editMachineForm.invalid">Save Changes</button>
+    </div>
+</form>

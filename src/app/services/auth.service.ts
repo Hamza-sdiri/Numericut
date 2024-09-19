@@ -6,12 +6,16 @@ import { Observable } from "rxjs";
   providedIn: "root",
 })
 export class AuthService {
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient) {}
+
+  isLoggedIn(): boolean {
+    return !!localStorage.getItem("token"); 
+  }
 
   login(data: any): Observable<any> {
-    return this.http.post('http://localhost:3000/auth/login', data);
+    return this.http.post("http://localhost:3000/auth/login", data);
   }
   register(data: any): Observable<any> {
-    return this.http.post('http://localhost:3000/auth/register', data);
+    return this.http.post("http://localhost:3000/auth/register", data);
   }
 }

@@ -17,6 +17,8 @@ import { GestionComandeComponent } from './admin/gestion-comande/gestion-comande
 import { GestionMachineComponent } from './admin/gestion-machine/gestion-machine.component';
 import { CreateMachineComponent } from './admin/creat-machine/creat-machine.component';
 import { MachineListComponent } from './admin/machine-list/machine-list.component';
+import { EditMachineComponent } from './admin/edit-machine/edit-machine.component';
+import { AuthGuard } from './services/auth-guard.service';
 
 
 const routes: Routes = [
@@ -27,26 +29,42 @@ const routes: Routes = [
   { path: "login", component: LoginComponent },
   { path: "landing", component: LandingComponent },
   { path: "nucleoicons", component: NucleoiconsComponent },
-  { path: "gestioncomande", component: GestionComandeComponent },
-  { path: "passercomande", component: PasserCommandeComponent },
-  
-  
-  //admin routes
+  {
+    path: "gestioncomande",
+    component: GestionComandeComponent,
+    canActivate: [AuthGuard],
+  },
+  {
+    path: "passercomande",
+    component: PasserCommandeComponent,
+    canActivate: [AuthGuard],
+  },
+
+  // admin routes
   {
     path: "gestion-comande",
     component: GestionComandeComponent,
+    canActivate: [AuthGuard],
   },
   {
     path: "gestion-machine",
     component: GestionMachineComponent,
+    canActivate: [AuthGuard],
   },
   {
     path: "creat-machine",
     component: CreateMachineComponent,
+    canActivate: [AuthGuard],
   },
   {
     path: "machine-list",
     component: MachineListComponent,
+    canActivate: [AuthGuard],
+  },
+  {
+    path: "edit-machine/:id",
+    component: EditMachineComponent,
+    canActivate: [AuthGuard],
   },
 ];
 
