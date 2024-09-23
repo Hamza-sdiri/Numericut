@@ -27,7 +27,7 @@ export class GestionUsersComponent implements OnInit {
     );
   }
   deleteUsers(id: string): void {
-    this.authService.deleteUsers(id).subscribe(
+    this.authService.deleteUser(id).subscribe(
       (response) => {
         console.log("user deleted successfully:", response);
         this.loadUsers(); 

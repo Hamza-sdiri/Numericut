@@ -22,4 +22,9 @@ export class AuthService {
   getAllUsers(): Observable<any>{
     return this.http.get("http://localhost:3000/auth/allUsers");
   }
+
+  deleteUser(id: any): Observable<any>{
+    return this.http.delete("http://localhost:3000/auth/deleteUser/"+id);
+  }
+
 }
