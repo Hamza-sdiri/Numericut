@@ -18,16 +18,10 @@
                 <td>{{ user.email }}</td>
                 <td>{{ user.phone }}</td>
                 <td>{{ user.role }}</td>
-                <td>
-                    <!-- Edit User Button -->
-                    <button class="btn btn-warning btn-sm mr-2" (click)="editUser(user._id)">
-                        Edit
-                    </button>
                     <!-- Delete User Button -->
                     <button class="btn btn-danger btn-sm" (click)="deleteUser(user._id)">
                         Delete
                     </button>
-                </td>
             </tr>
         </tbody>
     </table>

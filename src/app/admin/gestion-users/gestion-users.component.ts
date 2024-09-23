@@ -26,5 +26,16 @@ export class GestionUsersComponent implements OnInit {
       }
     );
   }
-
+  deleteUsers(id: string): void {
+    this.authService.deleteUsers(id).subscribe(
+      (response) => {
+        console.log("user deleted successfully:", response);
+        this.loadUsers(); 
+      },
+      (error) => {
+        console.error("Error deleting user", error);
+      }
+    );
+  }
+  
 }
