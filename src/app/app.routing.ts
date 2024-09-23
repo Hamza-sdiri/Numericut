@@ -19,6 +19,7 @@ import { CreateMachineComponent } from './admin/creat-machine/creat-machine.comp
 import { MachineListComponent } from './admin/machine-list/machine-list.component';
 import { EditMachineComponent } from './admin/edit-machine/edit-machine.component';
 import { AuthGuard } from './services/auth-guard.service';
+import { GestionUsersComponent } from './admin/gestion-users/gestion-users.component';
 
 
 const routes: Routes = [
@@ -66,6 +67,12 @@ const routes: Routes = [
     component: EditMachineComponent,
     canActivate: [AuthGuard],
   },
+  {
+    path: "gestion-users",
+    component:GestionUsersComponent,
+    canActivate:[AuthGuard]
+  }
+
 ];
 
 @NgModule({

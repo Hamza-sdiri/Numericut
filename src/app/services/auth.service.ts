@@ -18,4 +18,8 @@ export class AuthService {
   register(data: any): Observable<any> {
     return this.http.post("http://localhost:3000/auth/register", data);
   }
+
+  getAllUsers(): Observable<any>{
+    return this.http.get("http://localhost:3000/auth/allUsers");
+  }
 }

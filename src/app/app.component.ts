@@ -11,9 +11,15 @@ import { filter, Subscription } from 'rxjs';
     styleUrls: ['./app.component.scss']
 })
 export class AppComponent implements OnInit {
+isAdmin() : boolean {
+if (localStorage.getItem('role') == "admin"){
+    return true
+} else {
+    return false
+}
+}
     private _router: Subscription;
     @ViewChild(NavbarComponent) navbar: NavbarComponent;
-
     constructor( private renderer : Renderer2, private router: Router, @Inject(DOCUMENT,) private document: any, private element : ElementRef, public location: Location) {}
     ngOnInit() {
         var navbar : HTMLElement = this.element.nativeElement.children[0].children[0];

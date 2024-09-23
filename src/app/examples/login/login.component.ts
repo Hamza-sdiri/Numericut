@@ -41,6 +41,7 @@ export class LoginComponent implements OnInit {
             }
             localStorage.setItem("token",res.token)
             localStorage.setItem('username',res.username)
+            localStorage.setItem('role',res.role)
         },
         (err) => {
           console.log(err);

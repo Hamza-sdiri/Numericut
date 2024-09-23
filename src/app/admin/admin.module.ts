@@ -7,6 +7,7 @@ import { CreateMachineComponent } from './creat-machine/creat-machine.component'
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MachineListComponent } from './machine-list/machine-list.component';
 import { EditMachineComponent } from './edit-machine/edit-machine.component';
+import { GestionUsersComponent } from './gestion-users/gestion-users.component';
 
 const routes: Routes = [
   { path: 'gestion-comande', component: GestionComandeComponent },
@@ -23,6 +24,7 @@ const routes: Routes = [
     CreateMachineComponent,
     MachineListComponent,
     EditMachineComponent,
+    GestionUsersComponent,
   ],
   imports: [
     CommonModule,

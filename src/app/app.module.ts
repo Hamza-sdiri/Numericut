@@ -11,9 +11,10 @@ import { ComponentsModule } from './components/components.module';
 import { ExamplesModule } from './examples/examples.module';
 import { HttpClientModule } from '@angular/common/http';
 import { AdminModule } from './admin/admin.module';
+import { AdminSideComponent } from './shared/admin-side/admin-side.component';
 
 @NgModule({
-  declarations: [AppComponent, NavbarComponent, FooterComponent],
+  declarations: [AppComponent, NavbarComponent, FooterComponent,AdminSideComponent],
   imports: [
     BrowserModule,
     ReactiveFormsModule,

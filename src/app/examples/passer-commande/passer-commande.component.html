@@ -1,13 +1,6 @@
 <div class="page-header" data-parallax="true" style="background-image: url('./assets/img/daniel-olahh.jpg');">
     <div class="filter"></div>
     <div class="container">
-        <div class="motto text-center">
-          <h1>Example page</h1>
-            <h3>Start designing your landing page here.</h3>
-            <br />
-            <a href="/signup" class="btn btn-outline-neutral btn-round">Sign up</a>
-            <a href="/login" class="btn btn-outline-neutral btn-round">Login</a>
-          <div class="container mt-5">
             <div class="card p-4 shadow-sm">
                 <h2 class="mb-4">Create a New Commande</h2>
                 <form (submit)="onSubmit()" #comandeForm="ngForm">
@@ -17,6 +10,12 @@
                         <input type="text" id="customer" name="customer" class="form-control" [(ngModel)]="newComande.customer" required disabled>
                     </div>
         
+                    <div class="form-group mb-3">
+                        <label for="machine" class="form-label">Machine:</label>
+                        <select id="machine" name="machine" class="form-control">
+                            <option *ngFor="let machine of machines" [value]="machine.name">{{ machine.name }}</option>
+                        </select>
+                    </div>
                     <!-- Total Price -->
                     <div class="form-group mb-3">
                         <label for="totalPrice" class="form-label">Total Price:</label>
@@ -33,19 +32,19 @@
                     <div class="form-group mb-3">
                         <label for="paymentMethod" class="form-label">Payment Method:</label>
                         <input type="text" id="paymentMethod" name="paymentMethod" class="form-control" [(ngModel)]="newComande.paymentMethod" required>
-                    </div>        
-                    <!-- Delivered At -->
+                    </div>
+
+                    
+                    <!-- Delivered At
                     <div class="form-group mb-4">
                         <label for="deliveredAt" class="form-label">Delivered At:</label>
                         <input type="date" id="deliveredAt" name="deliveredAt" class="form-control" [(ngModel)]="newComande.deliveredAt">
-                    </div>
+                    </div> -->
         
                     <button type="submit" class="btn btn-primary w-100">Create Commande</button>
                 </form>
             </div>
-        </div>                  
        <!-- your code goes here -->
-        </div>
     </div>
 </div>
 <div class="main">

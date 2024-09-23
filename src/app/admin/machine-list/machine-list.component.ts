@@ -43,4 +43,8 @@ export class MachineListComponent implements OnInit {
     this.router.navigate(['/edit-machine', machineId]);
   }
 
+  onAdd() : void{
+    this.router.navigate(["/creat-machine"]);
+  }
+
 }

@@ -1,6 +1,9 @@
 <!-- src/app/components/machine-list/machine-list.component.html -->
 <div class="container mt-5">
     <h2 class="text-center mb-4">List of Machines</h2>
+      <div class="d-flex justify-content-end mb-3">
+        <button class="btn btn-success" (click)="onAdd()">Add Machine</button>
+      </div>
     <div *ngIf="machines.length > 0; else noMachines">
       <table class="table table-bordered">
         <thead>

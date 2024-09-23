@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ComandeService } from 'app/services/comande.service';
+import { MachineService } from 'app/services/machine.services';
 
 @Component({
   selector: 'app-passer-commande',
@@ -13,21 +14,33 @@ export class PasserCommandeComponent implements OnInit {
     totalPrice: 0,
     shippingAddress: '',
     paymentMethod: '',
-    orderStatus: 'processing', // Default value
+    orderStatus: 'processing', 
     orderedAt: new Date(),
     deliveredAt: null
   };
+  machines: any;
 
   ngOnInit(): void {
     const username = localStorage.getItem('username')
-    console.log(username)
     if (username) {
       this.newComande.customer = username;
     }
+    this.loadMachines();
   }
 
-  constructor(private comandeService: ComandeService) { }
+  constructor(private comandeService: ComandeService, private machineService:MachineService) { }
 
+
+  loadMachines(){
+    this.machineService.getAllMachines().subscribe(
+      data => {
+        this.machines = data;
+      },
+      error => {
+        console.error('Error fetching machine list', error);
+      }
+    )
+  }
 
 
   onSubmit(): void {
